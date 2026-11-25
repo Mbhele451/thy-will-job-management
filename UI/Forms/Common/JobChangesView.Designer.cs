@@ -1,0 +1,120 @@
+using System.Windows.Forms;
+
+namespace Major_Project.UI.Forms.Common
+{
+    partial class JobChangesView
+    {
+        internal DataGridView Records;
+        internal FlowLayoutPanel Toolbar;
+        internal Button RefreshButton;
+        internal Button RequestHistoryButton;
+        internal Button ReassignmentQueueButton;
+        internal CheckBox AllOpen;
+        internal Button ReviewSelectedButton;
+        internal Button ReassignSelectedJobButton;
+        internal Button NewAllocationsButton;
+        internal Button MarkSelectedAsReadButton;
+        internal Button MaterialReportsButton;
+        internal Button SubmitReportButton;
+        internal Label Feedback;
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            this.Records = new DataGridView();
+            this.Records.Name = "Records";
+            this.Records.Dock = DockStyle.Fill;
+            this.Records.ReadOnly = true;
+            this.Records.AllowUserToAddRows = false;
+            this.Records.AllowUserToDeleteRows = false;
+            this.Records.RowHeadersVisible = false;
+            this.Records.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.Records.MultiSelect = false;
+            this.Records.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.Controls.Add(this.Records);
+            this.Toolbar = new FlowLayoutPanel();
+            this.Toolbar.Name = "Toolbar";
+            this.Toolbar.Dock = DockStyle.Top;
+            this.Toolbar.Height = 48;
+            this.Toolbar.AutoScroll = true;
+            this.Toolbar.WrapContents = false;
+            this.Controls.Add(this.Toolbar);
+            this.RefreshButton = new Button();
+            this.RefreshButton.Name = "RefreshButton";
+            this.RefreshButton.Text = "Refresh";
+            this.RefreshButton.AutoSize = true;
+            this.RefreshButton.MinimumSize = new System.Drawing.Size(0, 34);
+            this.RefreshButton.Padding = new Padding(8, 0, 8, 0);
+            this.Toolbar.Controls.Add(this.RefreshButton);
+            this.RequestHistoryButton = new Button();
+            this.RequestHistoryButton.Name = "RequestHistoryButton";
+            this.RequestHistoryButton.Text = "Request history";
+            this.RequestHistoryButton.AutoSize = true;
+            this.RequestHistoryButton.MinimumSize = new System.Drawing.Size(0, 34);
+            this.RequestHistoryButton.Padding = new Padding(8, 0, 8, 0);
+            this.Toolbar.Controls.Add(this.RequestHistoryButton);
+            this.ReassignmentQueueButton = new Button();
+            this.ReassignmentQueueButton.Name = "ReassignmentQueueButton";
+            this.ReassignmentQueueButton.Text = "Reassignment queue";
+            this.ReassignmentQueueButton.AutoSize = true;
+            this.ReassignmentQueueButton.MinimumSize = new System.Drawing.Size(0, 34);
+            this.ReassignmentQueueButton.Padding = new Padding(8, 0, 8, 0);
+            this.Toolbar.Controls.Add(this.ReassignmentQueueButton);
+            this.AllOpen = new CheckBox();
+            this.AllOpen.Name = "AllOpen";
+            this.AllOpen.Text = "Include all open jobs";
+            this.AllOpen.AutoSize = true;
+            this.Toolbar.Controls.Add(this.AllOpen);
+            this.ReviewSelectedButton = new Button();
+            this.ReviewSelectedButton.Name = "ReviewSelectedButton";
+            this.ReviewSelectedButton.Text = "Review selected";
+            this.ReviewSelectedButton.AutoSize = true;
+            this.ReviewSelectedButton.MinimumSize = new System.Drawing.Size(0, 34);
+            this.ReviewSelectedButton.Padding = new Padding(8, 0, 8, 0);
+            this.Toolbar.Controls.Add(this.ReviewSelectedButton);
+            this.ReassignSelectedJobButton = new Button();
+            this.ReassignSelectedJobButton.Name = "ReassignSelectedJobButton";
+            this.ReassignSelectedJobButton.Text = "Reassign selected job";
+            this.ReassignSelectedJobButton.AutoSize = true;
+            this.ReassignSelectedJobButton.MinimumSize = new System.Drawing.Size(0, 34);
+            this.ReassignSelectedJobButton.Padding = new Padding(8, 0, 8, 0);
+            this.Toolbar.Controls.Add(this.ReassignSelectedJobButton);
+            this.NewAllocationsButton = new Button();
+            this.NewAllocationsButton.Name = "NewAllocationsButton";
+            this.NewAllocationsButton.Text = "New allocations";
+            this.NewAllocationsButton.AutoSize = true;
+            this.NewAllocationsButton.MinimumSize = new System.Drawing.Size(0, 34);
+            this.NewAllocationsButton.Padding = new Padding(8, 0, 8, 0);
+            this.Toolbar.Controls.Add(this.NewAllocationsButton);
+            this.MarkSelectedAsReadButton = new Button();
+            this.MarkSelectedAsReadButton.Name = "MarkSelectedAsReadButton";
+            this.MarkSelectedAsReadButton.Text = "Mark selected as read";
+            this.MarkSelectedAsReadButton.AutoSize = true;
+            this.MarkSelectedAsReadButton.MinimumSize = new System.Drawing.Size(0, 34);
+            this.MarkSelectedAsReadButton.Padding = new Padding(8, 0, 8, 0);
+            this.Toolbar.Controls.Add(this.MarkSelectedAsReadButton);
+            this.MaterialReportsButton = new Button();
+            this.MaterialReportsButton.Name = "MaterialReportsButton";
+            this.MaterialReportsButton.Text = "Material reports";
+            this.MaterialReportsButton.AutoSize = true;
+            this.MaterialReportsButton.MinimumSize = new System.Drawing.Size(0, 34);
+            this.MaterialReportsButton.Padding = new Padding(8, 0, 8, 0);
+            this.Toolbar.Controls.Add(this.MaterialReportsButton);
+            this.SubmitReportButton = new Button();
+            this.SubmitReportButton.Name = "SubmitReportButton";
+            this.SubmitReportButton.Text = "Record materials";
+            this.SubmitReportButton.AutoSize = true;
+            this.SubmitReportButton.MinimumSize = new System.Drawing.Size(0, 34);
+            this.SubmitReportButton.Padding = new Padding(8, 0, 8, 0);
+            this.Toolbar.Controls.Add(this.SubmitReportButton);
+            this.Feedback = new Label();
+            this.Feedback.Name = "Feedback";
+            this.Feedback.Dock = DockStyle.Bottom;
+            this.Feedback.Height = 52;
+            this.Feedback.Text = "Select a list to view the latest records.";
+            this.Controls.Add(this.Feedback);
+            this.Size = new System.Drawing.Size(960, 560);
+            this.ResumeLayout(false);
+        }
+    }
+}

@@ -1,0 +1,26 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Mobile.master.cs" Inherits="MajorProject.Web.Site_Mobile" %>
+<%@ Register Src="~/ViewSwitcher.ascx" TagPrefix="friendlyUrls" TagName="ViewSwitcher" %>
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light" xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <script src="<%= ResolveUrl("~/Content/js/Site.js") %>?v=20261123"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+    <link href="<%= ResolveUrl("~/Content/css/theme.css") %>" rel="stylesheet" />
+    <link href="<%= ResolveUrl("~/Content/css/components.css") %>?v=20261123" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <header class="tw-portal-toolbar"><a href="<%= ResolveUrl("~/Default.aspx") %>">THY WILL</a><button type="button" class="tw-theme-toggle" data-theme-toggle aria-label="Switch colour theme" aria-pressed="false" title="Switch colour theme"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"/></svg><span class="tw-theme-label">Theme</span></button></header>
+        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+        <section class="content-wrapper main-content clear-fix">
+            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+        </section>
+        <friendlyUrls:ViewSwitcher runat="server" />
+    </div>
+    </form>
+</body>
+</html>

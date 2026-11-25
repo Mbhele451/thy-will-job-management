@@ -1,0 +1,259 @@
+.workorder-page {
+    width: 100%;
+}
+
+.workorder-section {
+    margin-bottom: 1.5rem;
+}
+
+.workorder-section:last-child {
+    margin-bottom: 0;
+}
+
+.workorder-panel-body {
+    padding: 1.5rem;
+}
+
+.workorder-message {
+    margin-bottom: 1.25rem;
+}
+
+.workorder-customer-toolbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1rem;
+    align-items: end;
+    margin-bottom: 1.25rem;
+}
+
+.workorder-search-actions {
+    display: flex;
+    align-items: center;
+    gap: .65rem;
+}
+
+.workorder-customer-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.workorder-customer-table {
+    min-width: 850px;
+    margin-bottom: 0;
+}
+
+.workorder-selected-customer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.25rem;
+    padding: 1rem 1.1rem;
+    background: var(--color-accent-soft);
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+}
+
+.workorder-selected-customer-name {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    color: var(--color-text-primary);
+    font-size: .95rem;
+    font-weight: 700;
+}
+
+.workorder-selected-customer-name i {
+    color: var(--tw-orange, var(--color-warning));
+    font-size: 1rem;
+}
+
+.workorder-selected-customer-meta {
+    color: var(--tw-muted, var(--color-text-secondary));
+    font-size: .78rem;
+    line-height: 1.5;
+    text-align: right;
+}
+
+.workorder-service-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(120px, .75fr) minmax(180px, 1fr);
+    gap: 1.15rem;
+}
+
+.workorder-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: .45rem;
+    min-width: 0;
+}
+
+.workorder-form-label {
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.workorder-required::after {
+    content: " *";
+    color: var(--tw-orange, var(--color-warning));
+}
+
+.workorder-page .form-control,
+.workorder-page .form-select {
+    width: 100%;
+    min-height: 44px;
+    color: var(--tw-text, var(--color-text-primary));
+    background: var(--color-surface-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    box-shadow: none;
+    transition: border-color .2s ease, background .2s ease, box-shadow .2s ease;
+}
+
+.workorder-page .form-control::placeholder {
+    color: var(--color-text-muted);
+}
+
+.workorder-page .form-control:focus,
+    .workorder-page .form-select:focus {
+    color: var(--tw-text, var(--color-text-primary));
+    background: var(--color-surface-secondary);
+    border-color: var(--tw-orange, var(--color-border));
+    box-shadow: var(--shadow-sm);
+    outline: none;
+}
+
+.workorder-page .form-select option {
+    color: var(--color-text-primary);
+    background: var(--color-surface-secondary);
+}
+
+.workorder-page textarea.form-control {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.workorder-quantity {
+    text-align: center;
+}
+
+.workorder-form-help {
+    margin-top: .1rem;
+    color: var(--tw-muted, var(--color-text-secondary));
+    font-size: .72rem;
+    line-height: 1.5;
+}
+
+.workorder-form-help i {
+    color: var(--tw-orange, var(--color-warning));
+}
+
+.workorder-add-service {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.workorder-add-service .dashboard-btn {
+    min-width: 160px;
+}
+
+.workorder-cart-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.workorder-cart-table {
+    min-width: 500px;
+    margin-bottom: 0;
+}
+
+.workorder-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .75rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.workorder-actions .dashboard-btn {
+    min-width: 140px;
+}
+
+@media (max-width: 900px) {
+.workorder-service-grid {
+    grid-template-columns: 1fr 1fr;
+}
+
+}
+
+@media (max-width: 768px) {
+.workorder-panel-body {
+    padding: 1rem;
+}
+
+.workorder-customer-toolbar {
+    grid-template-columns: 1fr;
+}
+
+.workorder-search-actions {
+    justify-content: flex-start;
+}
+
+.workorder-service-grid {
+    grid-template-columns: 1fr;
+}
+
+.workorder-selected-customer {
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.workorder-selected-customer-meta {
+    text-align: left;
+}
+
+.workorder-add-service {
+    justify-content: stretch;
+}
+
+.workorder-add-service .dashboard-btn {
+    width: 100%;
+}
+
+.workorder-actions {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.workorder-actions .dashboard-btn {
+    width: 100%;
+}
+
+}
+
+@media (max-width: 480px) {
+.workorder-panel-body {
+    padding: .85rem;
+}
+
+.workorder-search-actions {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.workorder-search-actions .dashboard-btn {
+    width: 100%;
+}
+
+}

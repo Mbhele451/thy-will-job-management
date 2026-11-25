@@ -1,0 +1,70 @@
+/* Invoice checkout. Dialogs live directly under the server form, outside animated containers. */
+.tw-payment-host .payment-modal-overlay { position:fixed;inset:0;z-index:10000;display:none;overflow:auto;overscroll-behavior:contain;padding:28px 20px;background:var(--color-overlay); }
+.tw-payment-host .payment-modal-overlay[aria-hidden="false"] { display:flex;align-items:flex-start;justify-content:center; }
+.tw-payment-host .payment-modal-content { flex:none;width:min(100%,550px);max-width:100%;max-height:calc(100dvh - 56px);overflow:auto;overscroll-behavior:contain;margin:auto;padding:28px;border:1px solid var(--color-border);border-radius:18px;background:var(--color-surface);box-shadow:0 24px 80px rgba(0,0,0,.24); }
+.tw-payment-host .checkout-card-dialog { width:min(100%,940px); }
+.tw-payment-host .payment-modal-header { margin:0 0 22px;padding-right:32px; }
+.tw-payment-host .payment-modal-header h2 { font-size:clamp(23px,3vw,30px);font-weight:650;letter-spacing:-.04em;line-height:1.2;margin:8px 0; }
+.tw-payment-host .payment-modal-header p { font-size:13px;line-height:1.6;color:var(--color-text-secondary);margin:0; }
+.tw-payment-host .payment-eyebrow { font-size:10px;letter-spacing:.14em;font-weight:650;color:var(--color-primary); }
+.tw-payment-host .payment-modal-close { position:absolute;right:18px;top:18px;width:36px;height:36px;border:1px solid var(--color-border);border-radius:50%;background:var(--color-surface-secondary);color:var(--color-text-primary);display:grid;place-items:center;padding:0;font-size:22px;z-index:2; }
+.tw-payment-host .card-tabs { display:flex;gap:4px;width:fit-content;max-width:100%;margin:0 0 24px;padding:4px;background:var(--color-surface-secondary);border:1px solid var(--color-border);border-radius:10px; }
+.tw-payment-host .card-tab { min-height:40px;padding:8px 20px;border:1px solid transparent;border-radius:7px;color:var(--color-text-secondary);background:transparent;font-size:13px;font-weight:600; }
+.tw-payment-host .card-tab.active { background:var(--color-surface);border-color:var(--color-border);color:var(--color-text-primary);box-shadow:var(--shadow-sm); }
+.tw-payment-host .card-tab-panel[hidden],.tw-payment-host [hidden] { display:none !important; }
+.tw-payment-host .checkout-grid { display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1fr);gap:36px;align-items:start; }
+.tw-payment-host .checkout-card-aside { min-width:0; }
+.tw-payment-host .checkout-aside-heading { display:flex;align-items:center;justify-content:space-between;gap:8px; }
+.tw-payment-host .checkout-card-badge { border:1px solid var(--color-border);border-radius:20px;padding:4px 8px;font-size:10px;color:var(--color-text-secondary); }
+.tw-payment-host .simulated-card { min-height:218px;margin:16px 0 22px;padding:24px;border-radius:16px;background:linear-gradient(130deg,var(--color-primary-soft),var(--color-surface-secondary) 80%);box-shadow:var(--shadow-md); }
+.tw-payment-host .simulated-card::before { right:-90px;bottom:-110px;width:270px;height:270px;border-color:var(--color-primary);opacity:.18;box-shadow:0 0 0 24px var(--color-primary-soft); }
+.tw-payment-host .simulated-card-brand { font-size:14px;letter-spacing:.08em;font-style:normal; }
+.tw-payment-host .simulated-card-chip { width:36px;height:28px;margin-top:24px;background:var(--color-accent-soft);color:var(--color-accent); }
+.tw-payment-host .simulated-card-number { margin:20px 0 24px;font-size:clamp(15px,2vw,20px);letter-spacing:.08em; }
+.tw-payment-host .simulated-card-bottom { align-items:flex-start;gap:12px; }
+.tw-payment-host .simulated-card-label { font-size:8px;letter-spacing:.12em;color:var(--color-text-muted); }
+.tw-payment-host .simulated-card-holder-value { font-size:11px;line-height:1.5;max-width:230px; }
+.tw-payment-host .checkout-preview-expiry { display:flex;flex-direction:column;gap:6px;flex-shrink:0; }
+.tw-payment-host .checkout-trust { display:flex;align-items:flex-start;gap:10px;padding:0 4px; }
+.tw-payment-host .checkout-trust > i { color:var(--color-primary);font-size:18px; }
+.tw-payment-host .checkout-trust strong { display:block;font-size:12px;font-weight:600; }
+.tw-payment-host .checkout-trust p,.tw-payment-host .checkout-demo { font-size:11px;line-height:1.7;color:var(--color-text-muted);margin:5px 0 0; }
+.tw-payment-host .checkout-demo { padding:16px 4px 0;margin-top:16px;border-top:1px solid var(--color-border); }
+.tw-payment-host .checkout-form { min-width:0; }
+.tw-payment-host .payment-form-group { margin-bottom:18px; }
+.tw-payment-host .payment-form-group label { margin-bottom:8px;font-size:12px;font-weight:600; }
+.tw-payment-host .payment-form-control { min-height:46px;border-radius:8px;font-size:14px;padding:11px 13px;background:var(--color-surface);color:var(--color-text-primary); }
+.tw-payment-host .payment-form-control:focus-visible { outline:2px solid var(--color-primary);outline-offset:2px;box-shadow:none; }
+.tw-payment-host .payment-form-hint { color:var(--color-text-muted);font-size:11px;line-height:1.5; }
+.tw-payment-host .checkout-optional { color:var(--color-text-muted);font-weight:400; }
+.tw-payment-host .checkout-cvv-control { display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:stretch; }
+.tw-payment-host .checkout-cvv-control input { width:100%;min-width:0;letter-spacing:.14em;padding-right:13px; }
+.tw-payment-host .checkout-cvv-toggle { position:static;transform:none;min-width:66px;min-height:46px;border:1px solid var(--color-border);border-radius:8px;padding:8px 14px;background:var(--color-surface-secondary);color:var(--color-text-primary);font-size:12px;font-weight:600; }
+.tw-payment-host .payment-checkout-summary { border:0;border-top:1px solid var(--color-border);border-radius:0;background:transparent;margin:22px 0 16px;padding:18px 0 0; }
+.tw-payment-host .payment-checkout-summary > span { font-size:12px;color:var(--color-text-secondary); }
+.tw-payment-host .payment-checkout-summary strong { font-size:22px;font-weight:650;letter-spacing:-.04em;color:var(--color-text-primary);font-variant-numeric:tabular-nums; }
+.tw-payment-host .payment-modal-content .dashboard-btn-primary { display:block;width:100%;min-height:48px;border-radius:9px;margin-top:0;font-size:13px;font-weight:650; }
+.tw-payment-host .saved-card-heading { display:block;margin:0 0 16px; }
+.tw-payment-host .saved-card-heading h3 { font-size:16px;margin:0 0 6px;color:var(--color-text-primary); }
+.tw-payment-host .saved-card-heading span { font-size:12px;color:var(--color-text-secondary); }
+.tw-payment-host .saved-card-list { max-height:180px;overflow:auto;margin:0 0 20px; }
+.tw-payment-host .saved-card-option { min-height:65px;border-radius:9px;padding:12px; }
+.tw-payment-host .saved-card-option.selected { background:var(--color-primary-soft);border-color:var(--color-primary); }
+.tw-payment-host .checkout-error { margin:0 0 20px;padding:12px 14px;border:1px solid var(--color-danger);border-radius:8px;color:var(--color-danger);background:var(--color-danger-soft);font-size:13px;line-height:1.6; }
+.tw-payment-host .checkout-field-error { display:block;color:var(--color-danger);font-size:11px;line-height:1.5;margin-top:6px; }
+.tw-payment-host button:focus-visible,.tw-payment-host input[type="submit"]:focus-visible { outline:2px solid var(--color-primary);outline-offset:3px; }
+@media(max-width:720px) {
+ .tw-payment-host .payment-modal-overlay { padding:12px; }
+ .tw-payment-host .payment-modal-content { padding:22px 18px;max-height:calc(100dvh - 24px);border-radius:14px; }
+ .tw-payment-host .checkout-grid { grid-template-columns:minmax(0,1fr);gap:22px; }
+ .tw-payment-host .checkout-trust,.tw-payment-host .checkout-demo,.tw-payment-host .checkout-aside-heading { display:none; }
+ .tw-payment-host .simulated-card { min-height:180px;margin:0;padding:20px; }
+ .tw-payment-host .simulated-card-chip { margin-top:14px; }
+ .tw-payment-host .simulated-card-number { font-size:19px;margin:14px 0 18px; }
+ .tw-payment-host .card-tabs { margin-bottom:20px; }
+ .tw-payment-host .payment-modal-header h2 { max-width:300px; }
+}
+@media(prefers-reduced-motion:no-preference) {
+ .tw-payment-host .payment-modal-overlay[aria-hidden="false"] .payment-modal-content { animation:checkout-enter .18s ease-out; }
+ @keyframes checkout-enter { from { opacity:0;transform:translateY(8px); } to { opacity:1;transform:none; } }
+}

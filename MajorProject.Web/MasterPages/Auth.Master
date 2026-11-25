@@ -1,0 +1,231 @@
+<%@ Master Language="C#" AutoEventWireup="true"
+    CodeBehind="Auth.Master.cs"
+    Inherits="MajorProject.Web.MasterPages.Auth" %>
+
+<!DOCTYPE html>
+
+<html lang="en" data-theme="light">
+
+<head runat="server">
+    <script src="<%= ResolveUrl("~/Content/js/Site.js") %>?v=20261123"></script>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description"
+          content="Secure access to the THY WILL Electrical & Construction service management system." />
+
+    <title>
+        <asp:ContentPlaceHolder
+            ID="TitleContent"
+            runat="server">
+            THY WILL
+        </asp:ContentPlaceHolder>
+    </title>
+
+
+    <!-- =====================================================
+         BOOTSTRAP
+         ===================================================== -->
+
+    <link
+        href="<%= ResolveUrl("~/Content/css/bootstrap.min.css") %>"
+        rel="stylesheet" />
+
+
+    <!-- =====================================================
+         BOOTSTRAP ICONS
+         ===================================================== -->
+
+    <link
+        href="<%= ResolveUrl("~/Content/vendor/bootstrap-icons/bootstrap-icons.css") %>?v=20261123"
+        rel="stylesheet" />
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+         ===================================================== -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+
+    <!-- =====================================================
+         MAIN SITE THEME
+         ===================================================== -->
+
+    <link
+        href="<%= ResolveUrl("~/Content/css/Site.css") %>"
+        rel="stylesheet" />
+
+
+    <!-- =====================================================
+         AUTHENTICATION THEME
+         ===================================================== -->
+
+    <link
+        href="<%= ResolveUrl("~/Content/css/auth.css") %>"
+        rel="stylesheet" />
+
+
+    <!-- =====================================================
+         PAGE-SPECIFIC HEAD CONTENT
+         ===================================================== -->
+
+    <asp:ContentPlaceHolder
+        ID="HeadContent"
+        runat="server">
+    </asp:ContentPlaceHolder>
+
+    <link href="<%= ResolveUrl("~/Content/css/theme.css") %>" rel="stylesheet" />
+    <link href="<%= ResolveUrl("~/Content/css/components.css") %>?v=20261123" rel="stylesheet" />
+</head>
+
+
+<body class="tw-auth-body tw-auth-premium">
+
+<form
+    id="form1"
+    runat="server">
+
+
+    <!-- =====================================================
+         AUTHENTICATION HEADER
+         ===================================================== -->
+
+    <header class="tw-auth-header">
+
+        <div class="tw-auth-header-inner">
+
+
+            <!-- BRAND -->
+
+            <a
+                class="tw-brand"
+                href="~/Default.aspx"
+                runat="server"
+                aria-label="THY WILL home">
+
+                <span
+                    class="tw-brand-icon"
+                    aria-hidden="true">
+
+                    <i class="bi bi-lightning-charge-fill"></i>
+
+                </span>
+
+
+                <span class="tw-brand-text">
+
+                    <span class="tw-brand-title"><%= Server.HtmlEncode(MajorProject.Web.Helpers.SecurityGateway.CompanyName) %></span>
+
+                    <span class="tw-brand-sub">
+                        Electrical & Construction
+                    </span>
+
+                </span>
+
+            </a>
+
+
+            <button type="button" class="tw-theme-toggle" data-theme-toggle aria-label="Switch colour theme" aria-pressed="false" title="Switch colour theme"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"/></svg><span class="tw-theme-label">Theme</span></button>
+            <!-- BACK TO WEBSITE -->
+
+            <a
+                href="~/Default.aspx"
+                runat="server"
+                class="tw-auth-home-link">
+
+                <span>
+                    Back to Website
+                </span>
+
+                <i
+                    class="bi bi-arrow-right"
+                    aria-hidden="true">
+                </i>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         AUTH PAGE
+         ===================================================== -->
+
+    <div class="tw-auth-stage"><aside class="tw-auth-story" aria-label="THY WILL service introduction"><img src="<%= ResolveUrl("~/Content/images/editorial/installation.jpg") %>" alt="Electrical installation work" width="900" height="1200" /><div><span>THY WILL / CUSTOMER PORTAL</span><h2>Good work.<br />A clear next step.</h2><p>Manage service requests, follow your jobs and keep your invoices together.</p><a href="<%= ResolveUrl("~/Public/Services.aspx") %>">Explore our services &#8599;</a></div></aside><main class="tw-auth-main">
+
+        <asp:ContentPlaceHolder
+            ID="MainContent"
+            runat="server">
+        </asp:ContentPlaceHolder>
+
+    </main></div>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="tw-auth-footer">
+
+        <div class="tw-auth-footer-inner">
+
+            <div class="tw-footer-line"></div>
+
+            <p>
+
+                &copy; <%: DateTime.Now.Year %>
+                THY WILL Electrical & Construction.
+
+                <span class="tw-footer-separator">
+                    |
+                </span>
+
+                All rights reserved.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+
+</form>
+
+
+<!-- =========================================================
+     BOOTSTRAP JAVASCRIPT
+     ========================================================= -->
+
+<script
+    src="<%= ResolveUrl("~/Scripts/bootstrap.bundle.min.js") %>">
+</script>
+
+
+<!-- =========================================================
+     SITE JAVASCRIPT
+     ========================================================= -->
+
+
+
+
+<!-- =========================================================
+     PAGE-SPECIFIC JAVASCRIPT
+     ========================================================= -->
+
+<asp:ContentPlaceHolder
+    ID="ScriptsContent"
+    runat="server">
+</asp:ContentPlaceHolder>
+
+
+</body>
+
+</html>

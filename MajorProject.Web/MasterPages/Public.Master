@@ -1,0 +1,512 @@
+<%@ Master Language="C#" AutoEventWireup="true"
+    CodeBehind="Public.Master.cs"
+    Inherits="MajorProject.Web.MasterPages.Public" %>
+
+<%@ Register Src="~/Chatbot/Chatbot.ascx"
+    TagPrefix="tw"
+    TagName="Chatbot" %>
+
+<!DOCTYPE html>
+
+<html lang="en" data-theme="light">
+
+<head runat="server">
+    <script src="<%= ResolveUrl("~/Content/js/Site.js") %>?v=20261123"></script>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description"
+        content="THY WILL Electrical & Construction — professional electrical, construction, maintenance, fault-finding, solar and backup energy services in Durban and KwaZulu-Natal." />
+
+    <meta name="theme-color"
+        content="#07111f" />
+
+    <meta name="color-scheme"
+        content="light dark" />
+
+    <title>
+        <asp:ContentPlaceHolder
+            ID="TitleContent"
+            runat="server">
+            THY WILL Electrical & Construction
+        </asp:ContentPlaceHolder>
+    </title>
+
+    <!-- ===================================================== -->
+    <!-- BOOTSTRAP                                             -->
+    <!-- ===================================================== -->
+
+    <link
+        href="<%= ResolveUrl("~/Content/css/bootstrap.min.css") %>"
+        rel="stylesheet" />
+
+    <!-- ===================================================== -->
+    <!-- BOOTSTRAP ICONS                                       -->
+    <!-- ===================================================== -->
+
+    <link
+        href="<%= ResolveUrl("~/Content/vendor/bootstrap-icons/bootstrap-icons.css") %>?v=20261123"
+        rel="stylesheet" />
+
+    <!-- ===================================================== -->
+    <!-- GOOGLE FONT                                            -->
+    <!-- ===================================================== -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <!-- ===================================================== -->
+    <!-- THY WILL GLOBAL THEME                                  -->
+    <!-- ===================================================== -->
+
+    <link
+        href="<%= ResolveUrl("~/Content/css/Site.css") %>"
+        rel="stylesheet" />
+
+    <!-- ===================================================== -->
+    <!-- THY WILL CHATBOT                                       -->
+    <!-- ===================================================== -->
+
+    <link
+        href="<%= ResolveUrl("~/Chatbot/Chatbot.css") %>"
+        rel="stylesheet" />
+
+    <!-- ===================================================== -->
+    <!-- PAGE-SPECIFIC HEAD CONTENT                             -->
+    <!-- ===================================================== -->
+
+    <asp:ContentPlaceHolder
+        ID="HeadContent"
+        runat="server">
+    </asp:ContentPlaceHolder>
+
+    <link href="<%= ResolveUrl("~/Content/css/theme.css") %>" rel="stylesheet" />
+    <link href="<%= ResolveUrl("~/Content/css/components.css") %>?v=20261123" rel="stylesheet" />
+    <link href="<%= ResolveUrl("~/Content/css/landing.css") %>" rel="stylesheet" />
+</head>
+
+
+<body class="tw-home-premium tw-public-premium">
+
+    <form
+        id="form1"
+        runat="server">
+
+
+        <!-- ================================================= -->
+        <!-- SKIP LINK                                          -->
+        <!-- ================================================= -->
+
+        <a
+            href="#main-content"
+            class="visually-hidden-focusable">
+            Skip to main content
+        </a>
+
+
+        <!-- ================================================= -->
+        <!-- HEADER                                              -->
+        <!-- ================================================= -->
+
+        <header class="tw-header-wrapper">
+
+            <nav
+                class="tw-navbar-glass"
+                aria-label="Main navigation">
+
+                <div class="tw-nav-container">
+
+
+                    <!-- ========================================= -->
+                    <!-- BRAND                                     -->
+                    <!-- ========================================= -->
+
+                    <a
+                        class="tw-brand"
+                        href="~/Default.aspx"
+                        runat="server"
+                        aria-label="THY WILL Electrical & Construction home">
+
+                        <span
+                            class="tw-brand-icon"
+                            aria-hidden="true">
+
+                            <i class="bi bi-lightning-charge-fill"></i>
+
+                        </span>
+
+                        <span class="tw-brand-text">
+
+                            <span class="tw-brand-title"><%= Server.HtmlEncode(MajorProject.Web.Helpers.SecurityGateway.CompanyName) %></span>
+
+                            <span class="tw-brand-sub">
+                                Electrical &amp; Construction
+                            </span>
+
+                        </span>
+
+                    </a>
+
+
+                    <!-- ========================================= -->
+                    <!-- DESKTOP NAVIGATION                        -->
+                    <!-- ========================================= -->
+
+                    <div
+                        class="tw-nav-links"
+                        id="twDesktopNavigation">
+
+                        <a
+                            class="tw-nav-link"
+                            href="~/Default.aspx"
+                            runat="server"
+                            aria-label="Go to home page">
+
+                            <i
+                                class="bi bi-house-door-fill"
+                                aria-hidden="true">
+                            </i>
+
+                            <span>
+                                Home
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            class="tw-nav-link"
+                            href="~/Public/About.aspx"
+                            runat="server"
+                            aria-label="Learn more about THY WILL">
+
+                            <i
+                                class="bi bi-building"
+                                aria-hidden="true">
+                            </i>
+
+                            <span>
+                                About
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            class="tw-nav-link"
+                            href="~/Public/Services.aspx"
+                            runat="server"
+                            aria-label="View our services">
+
+                            <i
+                                class="bi bi-grid-fill"
+                                aria-hidden="true">
+                            </i>
+
+                            <span>
+                                Services
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            class="tw-nav-link"
+                            href="~/Public/Contact.aspx"
+                            runat="server"
+                            aria-label="Contact THY WILL">
+
+                            <i
+                                class="bi bi-chat-dots-fill"
+                                aria-hidden="true">
+                            </i>
+
+                            <span>
+                                Contact
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- ========================================= -->
+                    <!-- DESKTOP ACTIONS                           -->
+                    <!-- ========================================= -->
+
+                    <div class="tw-nav-actions">
+                        <% if (MajorProject.Web.Helpers.WebSession.IsAuthenticated) { %>
+                            <a class="tw-btn-primary" href="<%= ResolveUrl(MajorProject.Web.Helpers.WebSession.DashboardPath) %>">My dashboard</a>
+                        <% } else { %>
+
+
+                        <a
+                            class="tw-btn-login"
+                            href="~/Account/Login.aspx"
+                            runat="server"
+                            aria-label="Log in to your account">
+
+                            <i
+                                class="bi bi-box-arrow-in-right"
+                                aria-hidden="true">
+                            </i>
+
+                            <span>
+                                Login
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            class="tw-btn-primary"
+                            href="~/Account/Register.aspx"
+                            runat="server"
+                            aria-label="Create an account">
+
+                            <span>
+                                Get Started
+                            </span>
+
+                            <i
+                                class="bi bi-arrow-right"
+                                aria-hidden="true">
+                            </i>
+
+                        </a>
+
+                    <% } %>
+                    </div>
+
+
+                    <button type="button" class="tw-theme-toggle" data-theme-toggle aria-label="Switch colour theme" aria-pressed="false" title="Switch colour theme"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"/></svg><span class="tw-theme-label">Theme</span></button>
+<!-- ========================================= -->
+                    <!-- MOBILE MENU BUTTON                        -->
+                    <!-- ========================================= -->
+
+                    <button
+                        type="button"
+                        class="tw-mobile-menu-toggle"
+                        id="twMobileMenuToggle"
+                        aria-controls="twMobileMenu"
+                        aria-expanded="false"
+                        aria-label="Open navigation menu">
+
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+
+                    </button>
+
+
+                    <!-- ========================================= -->
+                    <!-- MOBILE NAVIGATION                         -->
+                    <!-- ========================================= -->
+
+                    <div
+                        id="twMobileMenu"
+                        class="tw-mobile-menu"
+                        aria-hidden="true">
+
+                        <div class="tw-mobile-menu-links">
+
+
+                            <a
+                                class="tw-nav-link"
+                                href="~/Default.aspx"
+                                runat="server">
+
+                                <i
+                                    class="bi bi-house-door-fill"
+                                    aria-hidden="true">
+                                </i>
+
+                                <span>
+                                    Home
+                                </span>
+
+                            </a>
+
+
+                            <a
+                                class="tw-nav-link"
+                                href="~/Public/About.aspx"
+                                runat="server">
+
+                                <i
+                                    class="bi bi-building"
+                                    aria-hidden="true">
+                                </i>
+
+                                <span>
+                                    About Us
+                                </span>
+
+                            </a>
+
+
+                            <a
+                                class="tw-nav-link"
+                                href="~/Public/Services.aspx"
+                                runat="server">
+
+                                <i
+                                    class="bi bi-grid-fill"
+                                    aria-hidden="true">
+                                </i>
+
+                                <span>
+                                    Services
+                                </span>
+
+                            </a>
+
+
+                            <a
+                                class="tw-nav-link"
+                                href="~/Default.aspx#how-it-works"
+                                runat="server">
+
+                                <i
+                                    class="bi bi-diagram-3-fill"
+                                    aria-hidden="true">
+                                </i>
+
+                                <span>
+                                    How It Works
+                                </span>
+
+                            </a>
+
+
+                            <a
+                                class="tw-nav-link"
+                                href="~/Public/Contact.aspx"
+                                runat="server">
+
+                                <i
+                                    class="bi bi-chat-dots-fill"
+                                    aria-hidden="true">
+                                </i>
+
+                                <span>
+                                    Contact Us
+                                </span>
+
+                            </a>
+
+                        </div>
+
+
+                        <!-- ===================================== -->
+                        <!-- MOBILE ACTIONS                        -->
+                        <!-- ===================================== -->
+
+                        <div class="tw-mobile-menu-actions">
+                        <% if (MajorProject.Web.Helpers.WebSession.IsAuthenticated) { %>
+                            <a class="tw-btn-primary" href="<%= ResolveUrl(MajorProject.Web.Helpers.WebSession.DashboardPath) %>">My dashboard</a>
+                        <% } else { %>
+
+
+                            <a
+                                class="tw-btn-login"
+                                href="~/Account/Login.aspx"
+                                runat="server">
+
+                                <i
+                                    class="bi bi-box-arrow-in-right"
+                                    aria-hidden="true">
+                                </i>
+
+                                <span>
+                                    Login
+                                </span>
+
+                            </a>
+
+
+                            <a
+                                class="tw-btn-primary"
+                                href="~/Account/Register.aspx"
+                                runat="server">
+
+                                <span>
+                                    Get Started
+                                </span>
+
+                                <i
+                                    class="bi bi-arrow-right"
+                                    aria-hidden="true">
+                                </i>
+
+                            </a>
+
+                        <% } %>
+                    </div>
+
+                    </div>
+
+                </div>
+
+            </nav>
+
+        </header>
+
+
+        <!-- ================================================= -->
+        <!-- MAIN PAGE CONTENT                                  -->
+        <!-- ================================================= -->
+
+        <main
+            id="main-content"
+            tabindex="-1">
+
+            <asp:ContentPlaceHolder
+                ID="MainContent"
+                runat="server">
+            </asp:ContentPlaceHolder>
+
+        </main>
+
+
+        <!-- ================================================= -->
+        <!-- FOOTER                                             -->
+        <!-- ================================================= -->
+
+        <footer class="hp-footer"><div class="hp-wrap"><div class="hp-footer-main"><a class="hp-footer-brand" href="#home">THY WILL<span>Electrical &amp; Construction</span></a><p>Electrical work for homes,<br />businesses and the spaces between.</p><div><a href="~/Public/Services.aspx" runat="server">Services</a><a href="~/Public/About.aspx" runat="server">About us</a><a href="~/Public/Contact.aspx" runat="server">Contact</a></div></div><div class="hp-footer-bottom"><span>&copy; <%: DateTime.Now.Year %> THY WILL Electrical &amp; Construction (Pty) Ltd.</span><div><a href="~/Public/PrivacyPolicy.aspx" runat="server">Privacy</a><a href="~/Public/Terms.aspx" runat="server">Terms</a><a href="#home">Back to top &#8593;</a></div></div></div></footer>
+
+
+        <!-- ================================================= -->
+        <!-- PUBLIC CHATBOT                                     -->
+        <!-- ================================================= -->
+
+        <tw:Chatbot
+            ID="PublicChatbot"
+            runat="server" />
+
+
+    </form>
+
+
+    <!-- ===================================================== -->
+    <!-- BOOTSTRAP JAVASCRIPT                                  -->
+    <!-- ===================================================== -->
+
+    <script
+        src="<%= ResolveUrl("~/Scripts/bootstrap.bundle.min.js") %>">
+    </script>
+
+
+    <!-- ===================================================== -->
+    <!-- THY WILL GLOBAL JAVASCRIPT                             -->
+    <!-- ===================================================== -->
+
+    
+
+</body>
+
+</html>
