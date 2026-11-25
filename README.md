@@ -4,7 +4,7 @@ THY WILL is a two-semester team capstone for an electrical and construction busi
 
 [Open the Azure website](https://ist-wst-group-34-evfsa0bcctd3acab.southafricanorth-01.azurewebsites.net/) · [Watch or download the 24-second screenshot walkthrough (MP4)](docs/demo/thy-will-walkthrough.mp4)
 
-The website runs on a university subscription. The walkthrough shows the manager workspace, service catalogue, saved job total and invoice actions. It can be viewed without an account.
+**Demo availability.** The Azure website may go offline in February 2027 if the university subscription ends. The walkthrough shows the manager workspace, service catalogue, saved job total and invoice actions. It can be viewed without an account.
 
 ## From booking to payment
 
@@ -27,7 +27,21 @@ Transport depends on the service. The catalogue shows R250 for General Electrica
 
 For this High Load Circuit Installation, R4,000 labour, R600 transport and R1,922 materials give a subtotal of R6,522. VAT of R978.30 brings the saved total to **R7,500.30**.
 
-## Architecture and contributions
+### Windows desktop application
+
+| Staff sign-in | Inventory management |
+| --- | --- |
+| ![Early Windows Forms staff sign-in screen](docs/demo/desktop-sign-in.png) | ![Desktop inventory grid with item quantities, prices and reorder levels](docs/demo/desktop-stock.png) |
+
+The early sign-in screen shows where staff enter their credentials. In the inventory workspace, managers can compare stock on hand with each item's reorder level before assigning materials to a job.
+
+![Desktop booking form showing an EV charger installation in the service list](docs/demo/desktop-booking.png)
+
+The booking form saves the selected service and quantity with the quoted total. Once a job is eligible for settlement, staff use the job toolbar to collect cash and open the invoice or receipt.
+
+![Windows Forms job toolbar with cash collection and invoice and receipt actions](docs/demo/job-actions.png)
+
+## Architecture
 
 | Component | Responsibility |
 | --- | --- |
@@ -36,7 +50,21 @@ For this High Load Circuit Installation, R4,000 labour, R600 transport and R1,92
 | Business services | Pricing, validation, authentication and payment rules shared across workflows |
 | Data access and SQL Server | Persistence for accounts, bookings, material allocations, invoices and payments |
 
-Lerato Mbhele built the manager workspace and worked on transaction processing, system administration, validation and layered architecture. Security work included salted PBKDF2 password verification, role-based access checks and customer ownership checks for invoices. The [regression checks](Verification/SystemRegressionTests.cs) include booking validation and payment input cases.
+## Project team
+
+| Contributor | Work on THY WILL |
+| --- | --- |
+| Lerato Mbhele | Manager workspace, transactions, security, validation and shared application architecture |
+| Olwethu Shangase | Project research |
+| Sbonelo Ntshangase | Customer pages |
+| Thobani Mbokazi | Technician workflows |
+| Mweli Ndawonde | Administrative pages |
+
+**Lerato's contributions.** Lerato built the manager workflows for booking jobs, assigning technicians, checking inventory and reviewing job changes. The transaction work connected service-specific pricing and material costs to invoices, cash collection and receipts, with checks that prevent duplicate settlement.
+
+The security work included salted PBKDF2 password verification, password recovery, role-based access and checks that restrict invoice access to the customer who owns the job. Lerato also worked on staff account administration and session revocation, and on separating business rules from presentation and SQL Server access across both clients.
+
+[Illustrated portfolio case study](https://mbhele451.github.io/portfolio/ThyWill.html) · [Booking and payment regression checks](Verification/SystemRegressionTests.cs)
 
 ## Development setup
 
